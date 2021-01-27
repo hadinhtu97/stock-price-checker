@@ -3,9 +3,8 @@
 $(document).ready(function () {
     $('#form1').submit((event) => {
         $.ajax({
-            url: '/api/stock-prices',
+            url: '/api/stock-prices?' + $('#form1').serialize(),
             type: 'get',
-            data: $('form1').serialize(),
             success: data => {
                 $('#output').html(JSON.stringify(data))
             }
@@ -15,9 +14,8 @@ $(document).ready(function () {
     });
     $('#form2').submit((event) => {
         $.ajax({
-            url: '/api/stock-prices',
+            url: '/api/stock-prices?' + $('#form2').serialize(),
             type: 'get',
-            data: $('form2').serialize(),
             success: data => {
                 $('#output').html(JSON.stringify(data))
             }
