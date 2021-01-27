@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "helmet": "^4.4.1",
     "mocha": "^8.2.1",
-    "mongoose": "^5.11.13"
+    "mongoose": "^5.11.13",
+    "node-fetch": "^2.6.1"
   },
   "author": "Tu Ha Dinh",
   "license": "ISC"
