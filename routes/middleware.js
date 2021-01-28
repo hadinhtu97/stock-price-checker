@@ -12,7 +12,7 @@ module.exports = (app) => {
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-    // app.use(helmet());
+    app.use(helmet());
 
     app.use(express.static(path.join(__dirname, '../public')));
 
