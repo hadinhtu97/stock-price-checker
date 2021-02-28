@@ -28,3 +28,6 @@ npm run start
 Functional test in test directory
 
 Run the project and `run npm run test` to run tests.
+
+### Demo
+[Link Demo](https://stock-price-checker.hadinhtu97.repl.co/)
