@@ -1,19 +1,30 @@
 # Stock Price Checker
 
-You should set the content security policies to only allow loading of scripts and CSS from your server.
+## Description
+Backend APIs check the price of given stock
 
-You can send a GET request to /api/stock-prices with form data containing a NASDAQ stock ticker. Returned will be an object with the property stockData.
+## Use 
+```
+git clone https://github.com/hadinhtu97/stock-price-checker
+cd stock-price-checker
+npm install
+touch .env
+[This app use mongodb as database, you need to add a MONGO_URI variable into .env]
+npm run start
+```
 
-The stockData property includes the stock ticker as a string, the price as a number, and likes as a number.
+## APIs
+* GET : `[]/api/stock-prices?stock=[name]` or `[]/api/stock-prices?stock=[name1]&stock=[name2]`
+  * `name` is a NASDAQ stock ticker.
+  * You can also pass along a `like` field as true (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+  * If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both stockData objects.
+  * Exam:
+    * `[]/api/stock-prices?stock=GOOG`
+    * `[]/api/stock-prices?stock=GOOG&like=true`
+    * `[]/api/stock-prices?stock=GOOG&stock=MSFT`
+    * `[]/api/stock-prices?stock=GOOG&stock=MSFT&like=true`
 
-You can also pass along a like field as true (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+## Testing
+Functional test in test directory
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of likes, it will display rel_likes (the difference between the likes on both stocks) for both stockData objects.
-
-All 5 functional tests are complete and passing :
-
-    Viewing one stock: GET request to /api/stock-prices/
-    Viewing one stock and liking it: GET request to /api/stock-prices/
-    Viewing the same stock and liking it again: GET request to /api/stock-prices/
-    Viewing two stocks: GET request to /api/stock-prices/
-    Viewing two stocks and liking them: GET request to /api/stock-prices/
+Run the project and `run npm run test` to run tests.
