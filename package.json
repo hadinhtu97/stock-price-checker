@@ -1,7 +1,7 @@
 {
   "name": "stock-price-checker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend APIs check the price of given stock",
   "main": "server.js",
   "scripts": {
     "test": "mocha --timeout 5000",
