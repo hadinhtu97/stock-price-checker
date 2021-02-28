@@ -1,10 +1,8 @@
 'use strict'
 
-const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
-const path = require('path');
 
 module.exports = (app) => {
 
@@ -19,7 +17,5 @@ module.exports = (app) => {
             styleSrc: ["'self'"]
         }
     }))
-
-    app.use(express.static(path.join(__dirname, '../public')));
 
 }

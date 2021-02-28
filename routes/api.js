@@ -2,6 +2,8 @@
 
 const StockChecker = require('../controllers/stockChecker.js')
 
+// Note : i know 'promise hell' what look like
+
 module.exports = (app) => {
 
     let stockChecker = new StockChecker()
@@ -307,5 +309,3 @@ module.exports = (app) => {
         });
 
 }
-// Note: Not handle when stockObj is string yet. This mean the stock name take from user is invalid.
-// Note: if user take 100 stock one time?
